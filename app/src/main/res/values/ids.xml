@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="fab_add_ballast_tank" type="id"/>
+    <item name="fab_add_fw_tank" type="id"/>
+    <item name="fab_create_pdf" type="id"/>
+
+</resources>

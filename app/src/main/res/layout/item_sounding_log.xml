@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:paddingTop="12dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:paddingBottom="12dp">
+
+    <TextView
+        android:id="@+id/textViewLogDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
+        android:textAppearance="?attr/textAppearanceBody2"
+        tools:text="2023-10-28 15:30:00"/>
+
+    <TextView
+        android:id="@+id/textViewLogSounding"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:gravity="end"
+        android:textAppearance="?attr/textAppearanceBody2"
+        tools:text="5.50 m"/>
+
+    <TextView
+        android:id="@+id/textViewLogVolume"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:gravity="end"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textStyle="bold"
+        tools:text="120.75 m³"/>
+</LinearLayout>

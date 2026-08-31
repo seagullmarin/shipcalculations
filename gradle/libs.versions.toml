@@ -1,0 +1,44 @@
+[versions]
+agp = "8.11.1"
+constraintlayout = "2.2.1"
+io = "7.2.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.1"
+kernel = "9.2.0"
+material = "1.12.0"
+materialVersion = "1.5.0"
+roomCommonJvm = "2.7.2"
+roomRuntimeAndroid = "2.7.2"
+adapters = "3.2.0-alpha11"
+media3Common = "1.7.1"
+impress = "0.0.3"
+speedDial = "3.3.0"
+activity = "1.10.1"
+recyclerview = "1.4.0"
+
+[libraries]
+constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+io = { module = "com.itextpdf:io", version.ref = "kernel" }
+io-v720 = { module = "com.itextpdf:io", version.ref = "io" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+kernel = { module = "com.itextpdf:kernel", version.ref = "kernel" }
+layout = { module = "com.itextpdf:layout", version.ref = "kernel" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+material-v150 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+room-common-jvm = { group = "androidx.room", name = "room-common-jvm", version.ref = "roomCommonJvm" }
+room-runtime-android = { group = "androidx.room", name = "room-runtime-android", version.ref = "roomRuntimeAndroid" }
+adapters = { group = "androidx.databinding", name = "adapters", version.ref = "adapters" }
+media3-common = { group = "androidx.media3", name = "media3-common", version.ref = "media3Common" }
+impress = { group = "com.google.ar", name = "impress", version.ref = "impress" }
+speed-dial = { module = "com.leinardi.android:speed-dial", version.ref = "speedDial" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+

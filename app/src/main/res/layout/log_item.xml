@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/colTime"
+        android:textColor="@color/white"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/colLat"
+        android:textColor="@color/white"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/colLon"
+        android:textColor="@color/white"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/colCog"
+        android:textColor="@color/white"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/colSog"
+        android:textColor="@color/white"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

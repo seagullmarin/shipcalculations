@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#3652ED"
+            app:title="Gyro Error"
+            app:titleTextColor="@color/white"
+            app:navigationIcon="@drawable/ic_gyro_error"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="15dp">
+
+        <!-- Gök Cismi -->
+        <TextView
+            android:text="Celestial Body"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp"/>
+        <Spinner
+            android:id="@+id/spinnerGokCismi"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:background="@drawable/item_spinner_background"
+            android:dropDownWidth="match_parent"
+
+            android:popupBackground="@drawable/item_spinner_background"
+            android:dropDownVerticalOffset="4dp"
+            android:spinnerMode="dropdown"/>
+
+        <!-- Tarih / Saat -->
+        <TextView
+            android:text="Date / Time  (dd.mm.yyyy  hh:mm:ss)"
+            android:layout_marginTop="12dp"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"/>
+        <EditText
+            android:id="@+id/etDateTime"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:focusable="false"
+            android:inputType="datetime"
+            android:clickable="false"
+            android:hint="31.12.2024 18:45:00"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="#46F0D1"
+            android:background="@color/black"/>
+
+        <!-- Enlem -->
+        <TextView
+            android:text="Lat.  (dd mm.mmm N/S)"
+            android:layout_marginTop="12dp"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"/>
+        <EditText
+            android:id="@+id/etLat"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="40 23.456 N"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="#46F0D1"
+            android:background="@color/black"/>
+
+        <!-- Boylam -->
+        <TextView
+            android:text="Long.  (ddd mm.mmm E/W)"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"/>
+        <EditText
+            android:id="@+id/etLon"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="029 15.123 E"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="#46F0D1"
+            android:background="@color/black"/>
+        <TextView
+            android:id="@+id/txtWarning"
+            android:background="@android:color/holo_red_dark"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!-- activity_main.xml veya ilgili layout -->
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchManualMode"
+                android:layout_width="141dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="30dp"
+                android:padding="5dp"
+                android:text="Manual Input"
+                android:textColor="@color/white" />
+            <Button
+                android:id="@+id/btnKonumAl"
+                style="@style/MyButton"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/btn_custom"
+                android:padding="15dp"
+                android:text="GPS"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="90dp"
+                android:textColor="#0F02C5"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <!-- Sonuç -->
+        <TextView
+            android:id="@+id/txtKoordinatlar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="#FBD306"
+            android:background="@color/black"/>
+        <TextView
+            android:id="@+id/txtSonuc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="#46F0D1"
+            android:background="@color/black"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:text="Obs.Bearing"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
+
+            <EditText
+                android:id="@+id/etObsBearing"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:gravity="center"
+                android:hint="000.0"
+                android:inputType="numberDecimal"
+                android:selectAllOnFocus="true"
+                android:textColor="#46F0D1"
+                android:textColorHint="#46F0D1"
+                android:textSize="22sp"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp">
+        <TextView
+            android:text="Gyro Heading"
+            android:textSize="16sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/etGyroHeading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:gravity="center"
+            android:hint="000.0"
+            android:inputType="numberDecimal"
+            android:selectAllOnFocus="true"
+            android:textColor="#46F0D1"
+            android:textColorHint="#46F0D1"
+            android:textSize="22sp"
+            tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp">
+        <TextView
+            android:text="Mag.Heading"
+            android:textSize="16sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/etMagHeading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:gravity="center"
+            android:hint="000.0"
+            android:inputType="numberDecimal"
+            android:selectAllOnFocus="true"
+            android:textColor="#46F0D1"
+            android:textColorHint="#46F0D1"
+            android:textSize="22sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtCompassResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#FBD306"
+            android:background="@color/black"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/etVariation"
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="10"
+                android:background="@color/black"
+                android:gravity="center"
+                android:hint="0.0"
+                android:inputType="numberDecimal|numberSigned"
+                android:selectAllOnFocus="true"
+                android:textColor="#46F0D1"
+                android:layout_marginStart="15dp"
+                android:textColorHint="#46F0D1"
+                android:textSize="22sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/txtVariationDirection"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="10"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#FBD306"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+            <!-- Butonlar -->
+            <Button
+                android:id="@+id/btnVariation"
+                style="@style/MyButton"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_weight="2"
+                android:background="@drawable/btn_deviation"
+                android:padding="5dp"
+                android:text="Varıatıon"
+                android:layout_marginStart="14dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="#F5F4F8"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnHesapla"
+                style="@style/MyButton"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="15dp"
+                android:text="Calc."
+                android:textColor="#0F02C5"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/btn_custom"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

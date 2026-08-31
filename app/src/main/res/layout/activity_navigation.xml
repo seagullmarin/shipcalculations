@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#3652ED"
+            app:title="GNSS Position"
+            app:titleTextColor="@color/white"
+            app:navigationIcon="@drawable/ic_gnss_antenna"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="#6003239C">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:padding="2dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+            <TextView
+                android:id="@+id/txtGpsStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="GNSS durumu"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:layout_marginTop="6dp"
+                android:textColor="#070707" />
+            <ImageView
+                android:id="@+id/imgSignal"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="end"
+                android:src="@drawable/ic_signal_none"
+                android:contentDescription="Sinyal seviyesi"
+                />
+        </LinearLayout>
+
+        <!-- Tarih / Saat -->
+        <TextView
+            android:text="Date / Time  (dd.mm.yyyy  hh:mm:ss)"
+            android:layout_marginTop="12dp"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"/>
+        <TextView
+            android:id="@+id/txtDateTime"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:focusable="false"
+            android:inputType="none"
+            android:hint="31.12.2024 18:45:00"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="#46F0D1"
+            android:background="@color/black"/>
+
+        <!-- Enlem -->
+        <TextView
+            android:text="Lat.  (dd mm.mmm N/S)"
+            android:layout_marginTop="12dp"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"/>
+        <TextView
+            android:id="@+id/txtLat"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="40 23.456 N"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="#46F0D1"
+            android:background="@color/black"/>
+
+        <!-- Boylam -->
+        <TextView
+            android:text="Long.  (ddd mm.mmm E/W)"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"/>
+        <TextView
+            android:id="@+id/txtLon"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="029 15.123 E"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="#46F0D1"
+            android:background="@color/black"/>
+        <TextView
+            android:id="@+id/txtWarning"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/txtCog"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="#46F0D1"
+            android:background="@color/black"
+            android:layout_marginTop="2dp"/>
+        <TextView
+            android:id="@+id/txtSpeed"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="#46F0D1"
+            android:background="@color/black"/>
+        <CheckBox
+            android:id="@+id/checkboxKeepScreenOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Screen Always On"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:checked="true"
+            android:layout_gravity="end"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="25dp"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log Range⏰(min):"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp"/>
+            <NumberPicker
+                android:id="@+id/numberPickerInterval"
+                android:theme="@style/AppTheme.Picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+            <Button
+                android:id="@+id/btnLogToggle"
+                style="@style/MyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="33dp"
+                android:textColor="@color/btn_blue"
+                android:background="@drawable/item_btn_background"
+                android:text="Start Log" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <Button
+        android:id="@+id/btnShareLogs"
+        style="@style/MyButton"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="Share Log"
+        android:textColor="@color/btn_blue"
+        android:background="@drawable/item_btn_background"
+        android:layout_gravity="end"
+         />
+
+            <Button
+                android:id="@+id/btnViewLogs"
+                style="@style/MyButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:background="@drawable/item_btn_background"
+                android:text="View Logs"
+                android:textColor="@color/btn_blue" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

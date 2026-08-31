@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <cache-path name="pdf_ballast_reports" path="pdf_ballast_reports/" />
+    <cache-path name="pdf_fresh_water_reports" path="pdf_fresh_water_reports/" />
+    <cache-path name="reports" path="reports/" />
+    <external-files-path
+        name="external_files"
+        path="." />
+
+    <external-files-path
+        name="files"
+        path="files/" />
+    <!-- Eğer başka dizinler kullanacaksanız buraya ekleyebilirsiniz:
+<external-path name="external_files" path="Download/" />
+
+
+    <external-path name="external_files" path="." />
+    <external-cache-path name="external_cache" path="."/>
+    <external-media-path name="external_media" path="."/>
+    -->
+</paths>

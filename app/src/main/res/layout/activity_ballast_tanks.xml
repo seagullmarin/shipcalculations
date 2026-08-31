@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#3652ED"
+            app:title="Ballast Tanks"
+            app:titleTextColor="@color/white"
+            app:navigationIcon="@drawable/ic_valve_icon"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#80A680"
+        >
+
+    <!-- Başlık -->
+        <TextView
+            android:id="@+id/textViewTotalCapacity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/total_capacity"
+            android:gravity="center"
+            android:padding="6dp"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/textViewTotalVolume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/total_volume"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:padding="6dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="#024707"/>
+        <TextView
+            android:id="@+id/textViewTotalWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/total_weight"
+            android:gravity="center"
+            android:padding="6dp"
+            android:textSize="22sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="#024707"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#403F3F" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewBallastTanks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="4dp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#403F3F" />
+
+    </LinearLayout>
+        </FrameLayout>
+    <com.leinardi.android.speeddial.SpeedDialView
+        android:id="@+id/speedDial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="5dp"
+        app:sdMainFabClosedSrc="@drawable/ic_settings_white"
+        app:sdMainFabOpenedSrc="@drawable/ic_close_white"
+        app:sdOverlayLayout="@color/black_translucent" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#040247"
+        android:padding="6dp">
+
+        <!-- Sol Taraf -->
+        <TextView
+            android:id="@+id/textViewLastUpdated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:text="Last Updated: 06.07.2025 18:15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/textViewFreshWaterTankNo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            tools:text="Tank: 1P (WB)"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewLastUpdated"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_split"
+            android:layout_marginEnd="4dp"/>
+
+        <ImageButton
+            android:id="@+id/buttonEditTank"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/edit"
+            android:src="@android:drawable/ic_menu_edit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/white" />
+
+        <ImageButton
+            android:id="@+id/buttonDeleteTank"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@android:drawable/ic_menu_delete"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/delete"
+            app:tint="@color/white"
+            android:layout_marginStart="6dp"
+            app:layout_constraintStart_toEndOf="@id/buttonEditTank"
+            app:layout_constraintTop_toTopOf="@id/buttonEditTank"
+            app:layout_constraintBottom_toBottomOf="@id/buttonEditTank"/>
+        <ImageButton
+            android:id="@+id/buttonCreateReport"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_pdf_share_light"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/create_report"
+            app:tint="@color/white"
+            android:layout_marginStart="6dp"
+            app:layout_constraintStart_toEndOf="@id/buttonDeleteTank"
+            app:layout_constraintTop_toTopOf="@id/buttonEditTank"
+            app:layout_constraintBottom_toBottomOf="@id/buttonDeleteTank"/>
+        <!-- Dikey Ayırıcı Çizgi (Guideline) -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_split"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.40" />
+        <!-- Sağ Taraf -->
+        <TextView
+            android:id="@+id/textViewFreshWaterTankCapacity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Capacity: 1000.00 m³"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@id/guideline_vertical_split"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewLastUpdated"
+            android:layout_marginStart="8dp"/>
+
+        <TextView
+            android:id="@+id/textViewTankType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="6dp" />
+        <TextView
+            android:id="@+id/textViewFreshWaterTankSounding"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:text="Sounding: 5.50 m"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@id/textViewFreshWaterTankCapacity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewFreshWaterTankCapacity"/>
+
+
+
+        <TextView
+            android:id="@+id/textViewFreshWaterTankVolume"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:text="Volume: 550.00 m³"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@id/textViewFreshWaterTankCapacity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewFreshWaterTankSounding"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

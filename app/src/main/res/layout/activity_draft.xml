@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#3652ED"
+            app:title="Draft Calculation"
+            app:titleTextColor="@color/white"
+            app:navigationIcon="@drawable/ic_primsol_icon"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="#6003239C">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_green">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/dateTimeLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="50dp"
+
+                            android:layout_marginEnd="50dp"
+                            android:hint="@string/select_date"
+                            android:textColorHint="@color/progress_bar_background_yellow"
+                            app:layout_constraintBottom_toTopOf="@+id/shipImageView"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/shipImageView"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:boxStrokeColor="@color/text_input_box_stroke_color_selector"
+                           >
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextDated"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:inputType="date"
+                                android:nextFocusDown="@string/hold_no_3_capacity_cu_mt"
+                                android:selectAllOnFocus="true"
+                                android:textColor="@color/progress_bar_background_yellow"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/shipImageView"
+                            android:layout_width="0dp"
+                            android:layout_height="190dp"
+                            android:layout_marginTop="75dp"
+                            android:layout_marginBottom="8dp"
+                            android:importantForAccessibility="no"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ship_four"
+                            app:layout_constraintBottom_toTopOf="@+id/textViewTrimAppd"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxAftd"
+                            android:layout_width="32dp"
+                            android:layout_height="28dp"
+                            android:layout_marginStart="50dp"
+
+                            android:layout_marginEnd="110dp"
+                            android:layout_weight="1"
+                            android:minHeight="48dp"
+                            app:layout_constraintBottom_toTopOf="@+id/textViewAftd"
+                            app:layout_constraintEnd_toStartOf="@+id/checkBoxMidd"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="TouchTargetSizeCheck" />
+                        <CheckBox
+                            android:id="@+id/checkBoxMidd"
+                            android:layout_width="32dp"
+                            android:layout_height="28dp"
+                            android:layout_weight="1"
+                            android:minHeight="48dp"
+                            android:layout_marginStart="50dp"
+                            android:layout_marginEnd="90dp"
+                            app:layout_constraintBottom_toTopOf="@+id/textViewMidd"
+                            app:layout_constraintEnd_toStartOf="@+id/checkBoxFwdd"
+                            tools:ignore="TouchTargetSizeCheck" />
+                        <CheckBox
+                            android:id="@+id/checkBoxFwdd"
+                            android:layout_width="32dp"
+                            android:layout_height="28dp"
+                            android:layout_weight="1"
+                            android:minHeight="48dp"
+                            android:layout_marginEnd="48dp"
+                            app:layout_constraintBottom_toTopOf="@+id/textViewFwdd"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+                        <TextView
+                            android:id="@+id/textViewAftd"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginBottom="67dp"
+                            android:layout_marginEnd="50dp"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/aft_d"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/shipImageView"
+                            app:layout_constraintEnd_toStartOf="@+id/textViewMidd"
+                            app:layout_constraintStart_toStartOf="@+id/shipImageView" />
+
+                        <TextView
+                            android:id="@+id/textViewMidd"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="67dp"
+                            android:layout_marginEnd="50dp"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/mid_d"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/shipImageView"
+                            app:layout_constraintEnd_toStartOf="@+id/textViewFwdd" />
+
+                        <TextView
+                            android:id="@+id/textViewFwdd"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="67dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_alignBottom="@id/shipImageView"
+                            android:layout_alignParentEnd="true"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/fwd"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/shipImageView"
+                            app:layout_constraintEnd_toEndOf="@+id/shipImageView" />
+
+                        <TextView
+                            android:id="@+id/textViewAftCorrd"
+                            android:layout_width="119dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@drawable/dashed_border"
+                            android:ems="6"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@+id/textViewMidCorrd"
+                            app:layout_constraintStart_toStartOf="@+id/shipImageView"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewAftd" />
+
+                        <TextView
+                            android:id="@+id/textViewMidCorrd"
+                            android:layout_width="119dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/dashed_border"
+                            android:text=""
+                            android:textAlignment="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@+id/textViewFwdCorrd"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewMidd" />
+
+                        <TextView
+                            android:id="@+id/textViewFwdCorrd"
+                            android:layout_width="119dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/dashed_border"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="@+id/shipImageView"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewFwdd" />
+
+                        <TextView
+                            android:id="@+id/textViewDeflectiond"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@android:color/transparent"
+                            android:hint=""
+                            android:paddingStart="5dp"
+                            android:paddingEnd="1dp"
+                            android:textColor="#3D5AFE"
+                            android:textSize="30sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/shipImageView" />
+                        <TextView
+                            android:id="@+id/textViewTrimAppd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:hint="@string/trim_apparent"
+                            android:textColor="@color/progress_bar_background_yellow"
+                            android:textSize="30sp"
+                            android:textStyle="bold"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:layout_marginStart="5dp"
+                            app:layout_constraintStart_toStartOf="@+id/shipImageView"
+                            app:layout_constraintTop_toBottomOf="@+id/shipImageView" />
+
+                        <TextView
+                            android:id="@+id/textViewTrimCorrd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/corrected_trim"
+                            android:textColor="@color/progress_bar_background_yellow"
+                            android:textSize="30sp"
+                            android:textStyle="bold"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:layout_marginStart="5dp"
+                            app:layout_constraintStart_toStartOf="@+id/shipImageView"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewTrimAppd" />
+
+                        <TextView
+                            android:id="@+id/textViewT_Meand"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/mean_of_mean"
+                            android:textColor="@color/progress_bar_background_yellow"
+                            android:textSize="30sp"
+                            android:textStyle="bold"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:layout_marginStart="5dp"
+                            app:layout_constraintStart_toStartOf="@+id/shipImageView"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewTrimCorrd" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginEnd="40dp">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/portFwdLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="@string/port_fwd"
+                            android:textColorHint="@color/progress_bar_background_yellow"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:boxStrokeColor="@color/text_input_box_stroke_color_selector">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextFwdPortd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="35sp"
+                                android:textStyle="bold"
+                                android:selectAllOnFocus="true"
+                                android:textAlignment="center"
+                                android:nextFocusDown="@id/editTextMidPortd"
+                                android:inputType="number|numberDecimal|numberSigned"
+                                android:textColor="@color/progress_bar_background_yellow"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/stbFwdLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="@string/starboard_fwd"
+                            android:textColorHint="@color/progress_bar_background_yellow"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:boxStrokeColor="@color/text_input_box_stroke_color_selector">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextFwdStbd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="35sp"
+                                android:textStyle="bold"
+                                android:selectAllOnFocus="true"
+                                android:textAlignment="center"
+                                android:nextFocusDown="@id/editTextMidStbd"
+                                android:inputType="number|numberDecimal|numberSigned"
+                                android:textColor="@color/progress_bar_background_yellow"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginEnd="40dp">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/portMidLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="@string/port_mid"
+                            android:textColorHint="@color/progress_bar_background_yellow"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:boxStrokeColor="@color/text_input_box_stroke_color_selector">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextMidPortd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="35sp"
+                                android:textStyle="bold"
+                                android:selectAllOnFocus="true"
+                                android:textAlignment="center"
+                                android:nextFocusDown="@id/editTextAftPortd"
+                                android:inputType="number|numberDecimal|numberSigned"
+                                android:textColor="@color/progress_bar_background_yellow"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/stbMidLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="@string/starboard_mid"
+                            android:textColorHint="@color/progress_bar_background_yellow"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:boxStrokeColor="@color/text_input_box_stroke_color_selector">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextMidStbd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="35sp"
+                                android:textStyle="bold"
+                                android:selectAllOnFocus="true"
+                                android:textAlignment="center"
+                                android:nextFocusDown="@id/editTextAftStbd"
+                                android:inputType="number|numberDecimal|numberSigned"
+                                android:textColor="@color/progress_bar_background_yellow"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginEnd="40dp">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/portAftLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="@string/port_aft"
+                            android:textColorHint="@color/progress_bar_background_yellow"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:boxStrokeColor="@color/text_input_box_stroke_color_selector">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextAftPortd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="35sp"
+                                android:textStyle="bold"
+                                android:selectAllOnFocus="true"
+                                android:textAlignment="center"
+                                android:nextFocusDown="@id/editTextFwdStbd"
+                                android:inputType="number|numberDecimal|numberSigned"
+                                android:textColor="@color/progress_bar_background_yellow"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/stbAftLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="@string/starboard_aft"
+                            android:textColorHint="@color/progress_bar_background_yellow"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:boxStrokeColor="@color/text_input_box_stroke_color_selector">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextAftStbd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="35sp"
+                                android:textStyle="bold"
+                                android:selectAllOnFocus="true"
+                                android:textAlignment="center"
+                                android:nextFocusDown="@id/editTextFwdPortd"
+                                android:inputType="number|numberDecimal|numberSigned"
+                                android:textColor="@color/progress_bar_background_yellow"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="100dp"
+                        android:paddingEnd="45dp"
+                        android:layout_marginTop="20dp">
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/btnSavePdf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/save_as_pdf"
+                            app:backgroundTint="@color/white"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:srcCompat="@drawable/ic_pdf_share" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            app:layout_constraintStart_toEndOf="@id/btnSavePdf"
+                            app:layout_constraintEnd_toStartOf="@id/btnSaveInd"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/btnSaveInd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="28dp"
+                            android:contentDescription="@string/save"
+                            app:backgroundTint="@color/light_gray"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:srcCompat="@android:drawable/ic_menu_save" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+        </FrameLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>

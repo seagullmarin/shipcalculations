@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<item
+    android:id="@+id/action_export_pdf"
+    android:title="Export as PDF"
+    android:icon="@drawable/ic_save_pdf"
+    app:showAsAction="always" />
+
+<item
+    android:id="@+id/action_add_tank"
+    android:title="Add New Tank"
+    android:icon="@android:drawable/ic_input_add"
+    app:showAsAction="always" />
+
+</menu>
+
